@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>העלאת ספר חדש</title>
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+<body>
+
+  <header>
+    <h1>ברוך הבא לאפליקציה - העלאה ראשונה של ספר</h1>
+  </header>
+
+  <section class="books-sample">
+    <h2>דוגמת ספרים להעלאה</h2>
+    <p>לפני שתעלה ספר חדש, תוכל לעיין ברשימה של ספרים שכבר קיימים:</p>
+    
+    <ul class="book-list">
+      <li>
+        <h3>ספר דוגמה 1</h3>
+        <p>מחבר: דוד כהן</p>
+        <p>קטגוריה: היסטוריה</p>
+        <p>מצב: חדש</p>
+      </li>
+      <li>
+        <h3>ספר דוגמה 2</h3>
+        <p>מחבר: שרה לוי</p>
+        <p>קטגוריה: ספרות</p>
+        <p>מצב: ישן</p>
+      </li>
+      <li>
+        <h3>ספר דוגמה 3</h3>
+        <p>מחבר: יוסי מאור</p>
+        <p>קטגוריה: פילוסופיה</p>
+        <p>מצב: חדש</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="upload-form">
+    <h2>העלאת ספר חדש</h2>
+    <form id="uploadForm" action="/upload-book" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="book-title">שם הספר:</label>
+        <input type="text" id="book-title" name="book-title" placeholder="הכנס שם ספר" required>
+      </div>
+
+      <div class="form-group">
+        <label for="book-author">מחבר:</label>
+        <input type="text" id="book-author" name="book-author" placeholder="הכנס שם מחבר" required>
+      </div>
+
+      <div class="form-group">
+        <label for="book-category">קטגוריה:</label>
+        <input type="text" id="book-category" name="book-category" placeholder="הכנס קטגוריה" required>
+      </div>
+
+      <div class="form-group">
+        <label for="book-condition">מצב:</label>
+        <input type="text" id="book-condition" name="book-condition" placeholder="הכנס מצב הספר" required>
+      </div>
+
+      <div class="form-group">
+        <label for="book-image">תמונה:</label>
+        <input type="file" id="book-image" name="book-image" required>
+      </div>
+
+      <button type="submit">העלה את הספר!</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 ספריית בית הכנסת</p>
+  </footer>
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      fetch('/upload-book', {
+        method: 'POST',
+        body: formData
+      }).then(response => response.text())
+        .then(data => {
+          alert(data);
+        }).catch(error => {
+          alert('התרחשה שגיאה בהעלאת הספר');
+        });
+    });
+  </script>
+
+</body>
+</html>

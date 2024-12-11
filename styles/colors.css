@@ -1,0 +1,11 @@
+/* colors.css */
+
+:root {
+    --primary-color: #4CAF50; /* ירוק */
+    --primary-hover-color: #45a049; /* ירוק כהה */
+    --background-color: #f3f4f6;
+    --text-color: #333;
+    --input-border-color: #ddd;
+    --input-focus-color: #4CAF50;
+  }
+  

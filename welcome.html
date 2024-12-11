@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ברוך הבא לאפליקציה</title>
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+<body>
+  <header>
+    <h1>ברוך הבא לאפליקציה שלנו!</h1>
+  </header>
+
+  <section class="welcome-section">
+    <div class="welcome-message">
+      <p>אנחנו שמחים שאתה כאן! כדי להתחיל להשתמש באפליקציה ולשתף ספרים, אנא מלא את השדות הבאים:</p>
+    </div>
+
+    <form action="/upload-book" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="book-title">שם הספר:</label>
+        <input type="text" id="book-title" name="book-title" placeholder="הכנס שם ספר" required>
+      </div>
+
+      <div class="form-group">
+        <label for="author-name">שם המחבר:</label>
+        <input type="text" id="author-name" name="author-name" placeholder="הכנס שם מחבר" required>
+      </div>
+
+      <div class="form-group">
+        <label for="category">קטגוריה:</label>
+        <select id="category" name="category" required>
+          <option value="history">היסטוריה</option>
+          <option value="fiction">ספרות</option>
+          <option value="science">מדע</option>
+          <option value="religion">דת</option>
+          <option value="art">אומניות</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="book-description">תיאור הספר:</label>
+        <textarea id="book-description" name="book-description" placeholder="תאר את הספר" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="book-image">תמונת הספר:</label>
+        <input type="file" id="book-image" name="book-image" accept="image/*">
+      </div>
+
+      <button type="submit">העלה את הספר הראשון שלך!</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>אם יש לך שאלות, פנה אלינו בקלות דרך <a href="mailto:support@app.com">מייל תמיכה</a>.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- search.html -->
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>חיפוש ספרים</title>
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- כותרת -->
+    <header class="app-header">
+      <h1>חיפוש ספרים</h1>
+    </header>
+
+    <!-- שדה חיפוש -->
+    <div class="search-container">
+      <input type="text" placeholder="הקלד שם ספר או מחבר..." class="search-bar">
+    </div>
+
+    <!-- תוצאות חיפוש -->
+    <div class="book-list">
+      <div class="book-item">
+        <div class="book-info">
+          <h2>ספר דוגמה</h2>
+          <p>מחבר: דוד כהן</p>
+          <p>קטגוריה: היסטוריה</p>
+          <p>מצב: זמין</p>
+        </div>
+        <a href="book-details.html" class="action-button">פרטי ספר</a>
+      </div>
+      <div class="book-item">
+        <div class="book-info">
+          <h2>ספר נוסף</h2>
+          <p>מחבר: שרה לוי</p>
+          <p>קטגוריה: ספרות</p>
+          <p>מצב: בהשאלה</p>
+        </div>
+        <a href="book-details.html" class="action-button">פרטי ספר</a>
+      </div>
+    </div>
+
+    <!-- כפתור חזרה -->
+    <div class="action-container">
+      <a href="index.html" class="action-button">חזור למסך הראשי</a>
+    </div>
+  </div>
+</body>
+</html>
